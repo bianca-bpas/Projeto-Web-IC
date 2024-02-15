@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jua", sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    background-image: linear-gradient(#fff, #eafbff);
+
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+img{
+    object-fit: cover;
+    object-position: top;
+    box-shadow: 0 10px 30px rgb(0, 0, 0, 0, 1);
+}
+
+nav {
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    background-image: linear-gradient(#defff8, #dcf9ff);
+    position: sticky;
+    top: 0;
+    scroll-margin-top: 50px;
+    z-index: 2; 
+}
+
+nav .logo,
+footer .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+nav .logo a,
+footer .logo {
+    margin-left: 8px;
+    font-size: 20px;
+    color: #3e3e3e;
+    font-weight: bold;
+}
+
+nav .nav-links,
+footer .bottom ul {
+    display: flex;
+    gap: 16px;
+    font-size: 17px;
+    list-style: none;
+}
+
+nav .nav-links a,
+footer .top a {
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.selected {
+    color: #303f9f;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 5px; 
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        background-color: #dcf9ff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links a {
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.carrossel {
+position: relative;
+max-width: 500px;
+margin: auto;
+overflow: hidden;
+}
+
+.slides {
+display: flex;
+transition: transform 0.5s ease-in-out;
+border-image-outset: 10%;
+}
+
+.slide {
+min-width: 100%;
+}
+
+img {
+width: 100%;
+height: 100%
+}
+
+.navigation {
+position: absolute;
+width: 100%;
+display: flex;
+justify-content: center;
+bottom: 10px;
+}
+
+label {
+cursor: pointer;
+height: 15px;
+width: 15px;
+background-color: #ddd;
+border-radius: 50%;
+margin: 0 5px;
+display: inline-block;
+transition: background-color 0.3s ease;
+}
+
+input[type="radio"] {
+position: absolute;
+opacity: 0;
+}
+
+#slide1:checked ~ .slides {
+transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slides {
+transform: translateX(-300%);
+}
+
+#slide5:checked ~ .slides {
+transform: translateX(-400%);
+}
+
+#slide6:checked ~ .slides {
+transform: translateX(-500%);
+}
+
+#slide7:checked ~ .slides {
+transform: translateX(-600%);
+}
+
+#slide8:checked ~ .slides {
+transform: translateX(-700%);
+}
+
+#slide9:checked ~ .slides {
+transform: translateX(-800%);
+}
+
+#slide10:checked ~ .slides {
+transform: translateX(-900%);
+}
+
+#slide11:checked ~ .slides {
+transform: translateX(-1000%);
+}
+
+#slide12:checked ~ .slides {
+transform: translateX(-1100%);
+}
+
+
+#slide1:checked ~ .navigation label:nth-child(1),
+#slide2:checked ~ .navigation label:nth-child(2),
+#slide3:checked ~ .navigation label:nth-child(3),
+#slide4:checked ~ .navigation label:nth-child(4),
+#slide5:checked ~ .navigation label:nth-child(5),
+#slide6:checked ~ .navigation label:nth-child(6),
+#slide7:checked ~ .navigation label:nth-child(7),
+#slide8:checked ~ .navigation label:nth-child(8),
+#slide9:checked ~ .navigation label:nth-child(9),
+#slide10:checked ~ .navigation label:nth-child(10),
+#slide11:checked ~ .navigation label:nth-child(11),
+#slide12:checked ~ .navigation label:nth-child(12) {
+background-color: #303f9f;
+}
+
+
+footer{
+    background-image: linear-gradient(#d8f8ff,#fff);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position:sticky;
+    flex-shrink: 0;
+}
+
+footer .logo img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+footer .top,
+footer .bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+footer .bottom a:hover,
+footer .bottom a.selected{
+    color: #303f9f;
+    cursor: pointer;
+}
+
